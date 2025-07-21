@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Kozyatağı'nda 3+1 Satılık Daire | Müstakbel Evim</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f8f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #6abf69;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav h2 {
+            display: inline-block;
+            margin: 0 15px;
+            cursor: pointer;
+            color: white;
+            font-size: 20px;
+        }
+
+            nav h2:hover {
+                text-decoration: underline;
+            }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: inline-block;
+            margin: 10px 5px 10px 0;
+        }
+
+        select {
+            padding: 5px;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: #6abf69;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .ilanlar-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: white;
+            padding: 10px;
+            width: 300px;
+            box-sizing: border-box;
+        }
+
+            .card img {
+                width: 100%;
+                border-radius: 5px;
+            }
+
+            .card h3 {
+                margin: 10px 0 5px 0;
+                font-size: 16px;
+            }
+
+            .card p {
+                margin: 0 0 10px 0;
+            }
+
+            .card a {
+                display: inline-block;
+                background-color: #6abf69;
+                color: white;
+                padding: 5px 10px;
+                border-radius: 4px;
+                text-decoration: none;
+            }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .main-photo {
+            flex: 1 1 600px;
+            max-width: 600px;
+        }
+
+            .main-photo img {
+                width: 100%;
+                border-radius: 5px;
+            }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+            .gallery img {
+                width: 100px;
+                height: 70px;
+                object-fit: cover;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
+
+                .gallery img:hover {
+                    transform: scale(1.05);
+                }
+
+        .details {
+            flex: 1 1 300px;
+        }
+
+        .price {
+            color: #6abf69;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+            td:first-child {
+                background: #6abf69;
+                color: white;
+                font-weight: bold;
+                width: 40%;
+            }
+
+        .desc {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #e8f5e9;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 onclick="location.href='index.html'">Müstakbel Evim</h1>
+    </header>
+
+    <div class="container">
+        <!-- Büyük Foto -->
+        <div class="main-photo">
+            <h2>Sinem Çapan'dan Kozyatağı'nda 3+1 Net 95m² Balkonlu Kombili Satılık Daire</h2>
+            <img id="bigPhoto" src="https://imaj.emlakjet.com/listing/17598074/D1D7EDD3F125372D2E0330D96414E99D17598074.jpg" alt="Ana Foto">
+
+            <div class="gallery" id="gallery">
+                <img src="https://imaj.emlakjet.com/listing/17598074/C8242378FA301BFF31DA849DAA4985CC17598074.jpg" alt="Küçük Foto 1">
+                <img src="https://imaj.emlakjet.com/listing/17598074/6091ED53A167F667857F4298116B643117598074.jpg" alt="Küçük Foto 2">
+                <img src="https://imaj.emlakjet.com/listing/17598074/C44C963CCAAE9AA390F4A2E3741E51BC17598074.jpg" alt="Küçük Foto 3">
+                <img src="https://imaj.emlakjet.com/listing/17598074/5E69EAB245C279FB6924E22AC09FE0CA17598074.jpg" alt="Küçük Foto 4">
+                <img src="https://imaj.emlakjet.com/listing/17598074/58033F705983FB4F4AC5F0F54D3A829117598074.jpg" alt="Küçük Foto 5">
+            </div>
+            <div class="location">
+                <div class="location">
+                    <iframe src="https://www.google.com/maps?q=Can%20Sokak%206,%20Kozyatağı%20Mahallesi,%20Kadıköy,%20İstanbul&output=embed"
+                            width="100%"
+                            height="300"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Detaylar -->
+        <div class="details">
+            <div class="price">8.500.000 TL</div>
+            <table>
+                <tr><td>İl</td><td>İstanbul</td></tr>
+                <tr><td>İlçe</td><td>Kadıköy</td></tr>
+                <tr><td>Mahalle</td><td>Kozyatağı Mahallesi</td></tr>
+                <tr><td>İlan No</td><td>17598074</td></tr>
+                <tr><td>İlan Tarihi</td><td>05 Temmuz 2025</td></tr>
+                <tr><td>Emlak Tipi</td><td>Satılık Daire</td></tr>
+                <tr><td>m² (Brüt)</td><td>120</td></tr>
+                <tr><td>m² (Net)</td><td>95</td></tr>
+                <tr><td>Oda Sayısı</td><td>3+1</td></tr>
+                <tr><td>Bina Yaşı</td><td>21 ve üzeri</td></tr>
+                <tr><td>Bulunduğu Kat</td><td>3. Kat</td></tr>
+                <tr><td>Kat Sayısı</td><td>4</td></tr>
+                <tr><td>Isıtma</td><td>Kombi Doğalgaz</td></tr>
+                <tr><td>Banyo Sayısı</td><td>2</td></tr>
+                <tr><td>Kullanım Durumu</td><td>Boş</td></tr>
+                <tr><td>Krediye Uygun</td><td>Evet</td></tr>
+                <tr><td>Yapı Durumu</td><td>İkinci El</td></tr>
+                <tr><td>Yapı Tipi</td><td>Betonarme</td></tr>
+                <tr><td>Tapu Durumu</td><td>Kat Mülkiyetli</td></tr>
+                <tr><td>Site İçerisinde</td><td>Hayır</td></tr>
+                <tr><td>Takas</td><td>Yok</td></tr>
+            </table>
+            <div class="desc">
+                <p>
+                    <strong>İlan Açıklaması:</strong><br>
+                    SINEM ÇAPAN GAYRİMENKUL'DEN SATILIK <br>
+                    İSTANBUL, KADIKÖY, KOZYATAĞI <br><br>
+                    Kozyatağı'nın merkezi ve prestijli lokasyonunda Kozzy AVM ve Central Hospital'a yürüme mesafesinde, metro ve minibüs yoluna yakın bu 3+1 daire. Konforlu yaşam fırsatı sizi bekliyor!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Mustakbel Evim. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>const bigPhoto = document.getElementById("bigPhoto");
+    const gallery = document.getElementById("gallery");
+
+    gallery.addEventListener("click", function(e) {
+      if (e.target.tagName === "IMG") {
+        const smallSrc = e.target.src;
+        const bigSrc = bigPhoto.src;
+
+        bigPhoto.src = smallSrc;
+        e.target.src = bigSrc;
+      }
+    });</script>
+
+</body>
+</html>

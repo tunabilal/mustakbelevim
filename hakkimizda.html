@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Hakkımızda | Müstakbel Evim</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background: #6abf69;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav h2 {
+            display: inline-block;
+            margin: 0 15px;
+            cursor: pointer;
+            color: white;
+        }
+
+            nav h2:hover {
+                text-decoration: underline;
+            }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            line-height: 1.7;
+        }
+
+            .container img {
+                max-width: 100%;
+                border-radius: 8px;
+                margin: 20px 0;
+            }
+
+        h1 {
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        h2 {
+            color: #6abf69;
+            margin-top: 30px;
+        }
+
+        .values {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .value-card {
+            flex: 1 1 300px;
+            background: #f9f9f9;
+            border-left: 5px solid #6abf69;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #e8f5e9;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 onclick="location.href='index.html'">Müstakbel Evim</h1>
+        <nav>
+            <h2 onclick="location.href='index.html'">Anasayfa</h2>
+            <h2 onclick="location.href='hakkimizda.html'">Hakkımızda</h2>
+            <h2 onclick="location.href='iletisim.html'">İletişim</h2>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Hakkımızda</h2>
+        <p>
+            <strong>Mustakbel Evim</strong>, Türkiye genelinde konut, arsa ve ticari gayrimenkul alanında güvenilir, şeffaf ve yenilikçi çözümler sunmak için kurulmuş lider emlak platformudur.
+            Bugüne kadar binlerce müşteriye hayallerindeki evi bulmaları için rehberlik ettik.
+        </p>
+
+        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" alt="Ofisimiz">
+
+        <h2>Vizyonumuz</h2>
+        <p>
+            Sektördeki dijital dönüşümün öncüsü olmak, en güvenilir ve ulaşılabilir emlak platformu haline gelmek.
+        </p>
+
+        <h2>Misyonumuz</h2>
+        <p>
+            Müşterilerimize hızlı, şeffaf ve memnuniyet odaklı hizmet sunarak
+            hayallerindeki mülkü kolayca bulmalarını sağlamak.
+        </p>
+
+        <h2>Değerlerimiz</h2>
+        <div class="values">
+            <div class="value-card">
+                <h3>Güven</h3>
+                <p>Her aşamada şeffaflık ve dürüstlük ilkesiyle çalışırız.</p>
+            </div>
+            <div class="value-card">
+                <h3>Yenilikçilik</h3>
+                <p>Teknolojiye yatırım yapar, modern çözümler üretiriz.</p>
+            </div>
+            <div class="value-card">
+                <h3>Müşteri Odaklılık</h3>
+                <p>Her zaman müşterilerimizin yanında olur, ihtiyaçlarına özel çözümler sunarız.</p>
+            </div>
+        </div>
+
+        <h2>Ekibimiz</h2>
+        <p>
+            Alanında uzman danışmanlardan oluşan dinamik ekibimizle, İstanbul'dan İzmir'e, Ankara'dan Antalya'ya kadar geniş bir bölgede hizmet veriyoruz.
+        </p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Mustakbel Evim. Tüm hakları saklıdır.</p>
+    </footer>
+
+</body>
+</html>

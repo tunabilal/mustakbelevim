@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Koşuyolu Kiralık 2+1 Daire | Mustakbel Evim</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background: #6abf69;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .main-photo {
+            flex: 1 1 500px;
+        }
+
+            .main-photo img {
+                width: 100%;
+                border-radius: 5px;
+            }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+            .gallery img {
+                width: 100px;
+                height: 70px;
+                object-fit: cover;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
+
+                .gallery img:hover {
+                    transform: scale(1.05);
+                }
+
+        .location {
+            margin-top: 20px;
+        }
+
+            .location iframe {
+                width: 100%;
+                height: 300px;
+                border: 0;
+                border-radius: 8px;
+            }
+
+            .location p {
+                margin-top: 10px;
+                font-size: 16px;
+                color: #555;
+            }
+
+        .details {
+            flex: 1 1 300px;
+        }
+
+        .price {
+            color: #6abf69;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+            td:first-child {
+                background: #6abf69;
+                color: white;
+                font-weight: bold;
+                width: 40%;
+            }
+
+        .desc {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #e8f5e9;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 onclick="location.href='index.html'">Müstakbel Evim</h1>
+    </header>
+
+    <div class="container">
+        <!-- Büyük Foto -->
+        <div class="main-photo">
+            <h2>Tema İstanbul 2 Full Peyzaj Manzaralı Daire</h2>
+            <img id="bigPhoto" src="anasayfailan3.jpg" alt="Ana Foto">
+
+            <div class="gallery" id="gallery">
+                <img src="24EC1519FBB616CE33915FBB470E488217581205.webp" alt="Küçük Foto 1">
+                <img src="DD3976462456F0590F4F3FC2205DFA2117581205.webp" alt="Küçük Foto 2">
+                <img src="76B5141855944A74ADD9570B4870855517581205.webp" alt="Küçük Foto 3">
+                <img src="B7837636E82B8CE8F5D89E56792E3BF017581205.webp" alt="Küçük Foto 4">
+            </div>
+            <div class="location">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12062.783546243345!2d28.7846872!3d41.0557541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa5b4a4182db7%3A0xaaaa!2s243.%20Sokak%20No%3A1%2C%20Atakent%2C%2034307%20K%C3%BC%C3%A7%C3%BCk%C3%A7ekmece%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1689709364782!5m2!1str!2str"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <p>📍 243. Sokak No:1, Atakent, 34307 Küçükçekmece/İstanbul</p>
+            </div>  
+        </div>
+
+        <!-- Detaylar -->
+        <div class="details">
+            <div class="price"> 115.000 TL</div>
+            <table>
+                <tr><td>İl</td><td>İstanbul</td></tr>
+                <tr><td>İlçe</td><td> Küçükçekmece</td></tr>
+                <tr><td>Mahalle</td><td>Atakent Mahallesi</td></tr>
+                <tr><td>İlan No</td><td>176326229</td></tr>
+                <tr><td>İlan Tarihi</td><td>01 Temmuz 2025</td></tr>
+                <tr><td>Emlak Tipi</td><td> apartman</td></tr>
+                <tr><td>m² (Brüt)</td><td>150</td></tr>
+                <tr><td>m² (Net)</td><td>130</td></tr>
+                <tr><td>Oda Sayısı</td><td>3+1</td></tr>
+                <tr><td>Bina Yaşı</td><td>1</td></tr>
+                <tr><td>Kat Sayısı</td><td>5</td></tr>
+                <tr><td>Bulunduğu Kat</td><td>5</td></tr>
+                <tr><td>Isıtma</td><td>Merkezi</td></tr>
+                <tr><td>Banyo Sayısı</td><td>2</td></tr>
+                <tr><td>Kullanım Durumu</td><td>Kiracılı</td></tr>
+                <tr><td>Tapu Durumu</td><td>Kat Mülkiyeti</td></tr>
+                <tr><td>Site İçerisinde</td><td>Evet</td></tr>
+            </table>
+            <div class="desc">
+                <p>
+                    <strong>İlan Açıklaması:</strong><br>
+                    GENİŞ PEYZAJ VE YEŞİL ALANLAR
+
+                    GENİŞ BALKONLAR VE TERASLAR, EŞSİZ DAİRE PLANLARI
+
+                    SOSYAL DONATILAR ; AÇIK VE KAPALI OTOPARK, ÇOCUK OYUN ALANLARI,
+
+                    KAPALI SOSYAL TESİS, 7/24 GÜVENLİK, AÇIK VE KAPALI HAVUZ
+                    <br>
+
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Mustakbel Evim. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>const bigPhoto = document.getElementById("bigPhoto");
+        const gallery = document.getElementById("gallery");
+
+        gallery.addEventListener("click", function (e) {
+            if (e.target.tagName === "IMG") {
+                const smallSrc = e.target.src;
+                const bigSrc = bigPhoto.src;
+
+                bigPhoto.src = smallSrc;
+                e.target.src = bigSrc;
+            }
+        });</script>
+
+</body>
+</html>

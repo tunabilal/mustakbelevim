@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <title>İletişim | Müstakbel Evim</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f8f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #6abf69;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav a {
+            display: inline-block;
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+            nav a:hover {
+                text-decoration: underline;
+            }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .info {
+            background: #6abf69;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+            .info p {
+                margin: 10px 0;
+            }
+
+            .info a {
+                background: white;
+                color: #6abf69;
+                padding: 5px 10px;
+                border-radius: 4px;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+        form {
+            margin-top: 30px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #6abf69;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        button {
+            margin-top: 15px;
+            background: #6abf69;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+            button:hover {
+                background: #58a35a;
+            }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #e8f5e9;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 onclick="location.href='index.html'">Müstakbel Evim</h1>
+        <nav>
+            <a href="index.html"><h2>Anasayfa</h2></a>
+            <a href="hakkimizda.html"><h2>Hakkımızda</h2></a>
+            <a href="iletisim.html"><h2>İletişim</h2></a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="info">
+            <h2>İLETİŞİM BİLGİLERİ</h2>
+            <p><strong>Telefon:</strong> 055102654455</p>
+            <p><strong>Email:</strong> <a href="mailto:info@mustakbelevim.com">Bize Yazın!</a></p>
+            <p><strong>Adres:</strong> Sinanpaşa Mh., Optimum Avm, Hacı Sabancı Blv. No:28, 01220 Yüreğir</p>
+        </div>
+
+        <form id="iletisimForm">
+            <label for="isim">İsim</label>
+            <input type="text" id="isim" name="isim" placeholder="Adınız" required>
+
+            <label for="email">Email Adresi</label>
+            <input type="email" id="email" name="email" placeholder="Email adresiniz" required>
+
+            <label for="mesaj">Mesaj</label>
+            <textarea id="mesaj" name="mesaj" placeholder="Mesajınız" required></textarea>
+
+            <button type="submit">GÖNDER</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Mustakbel Evim. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>const form = document.getElementById("iletisimForm");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault(); // Gerçek gönderimi engeller
+      alert("Mesajınız başarıyla gönderildi! Teşekkür ederiz.");
+      form.reset(); // Formu temizler
+    });</script>
+</body>
+</html>

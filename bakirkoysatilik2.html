@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Weal World' Den Yeşilköy De, Butik Site İçi, Çift Girişli, Sıfır Dubleks  | Müstakbel Evim</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f8f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #6abf69;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav h2 {
+            display: inline-block;
+            margin: 0 15px;
+            cursor: pointer;
+            color: white;
+            font-size: 20px;
+        }
+
+            nav h2:hover {
+                text-decoration: underline;
+            }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: inline-block;
+            margin: 10px 5px 10px 0;
+        }
+
+        select {
+            padding: 5px;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: #6abf69;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .ilanlar-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: white;
+            padding: 10px;
+            width: 300px;
+            box-sizing: border-box;
+        }
+
+            .card img {
+                width: 100%;
+                border-radius: 5px;
+            }
+
+            .card h3 {
+                margin: 10px 0 5px 0;
+                font-size: 16px;
+            }
+
+            .card p {
+                margin: 0 0 10px 0;
+            }
+
+            .card a {
+                display: inline-block;
+                background-color: #6abf69;
+                color: white;
+                padding: 5px 10px;
+                border-radius: 4px;
+                text-decoration: none;
+            }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .main-photo {
+            flex: 1 1 600px;
+            max-width: 600px;
+        }
+
+            .main-photo img {
+                width: 100%;
+                border-radius: 5px;
+            }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+            .gallery img {
+                width: 100px;
+                height: 70px;
+                object-fit: cover;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
+
+                .gallery img:hover {
+                    transform: scale(1.05);
+                }
+
+        .details {
+            flex: 1 1 300px;
+        }
+
+        .price {
+            color: #6abf69;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+            td:first-child {
+                background: #6abf69;
+                color: white;
+                font-weight: bold;
+                width: 40%;
+            }
+
+        .desc {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #e8f5e9;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 onclick="location.href='index.html'">Müstakbel Evim</h1>
+    </header>
+
+    <div class="container">
+        <!-- Büyük Foto -->
+        <div class="main-photo">
+            <h2>Weal World' Den Yeşilköy De, Butik Site İçi, Çift Girişli, Sıfır Dubleks </h2>
+            <img id="bigPhoto" src="https://imaj.emlakjet.com//resize/736/415/listing/17612891/F3CCDD27D2000E3F9255A7E3E2C4880016452784.jpg" alt="Ana Foto">
+
+            <div class="gallery" id="gallery">
+                <img src="https://imaj.emlakjet.com//resize/364/202/listing/17612891/D0096EC6C83575373E3A21D129FF8FEF16452784.jpg" alt="Küçük Foto 1">
+                <img src="https://imaj.emlakjet.com//resize/364/202/listing/17612891/032B2CC936860B03048302D991C3498F16452784.jpg" alt="Küçük Foto 2">
+                <img src="https://imaj.emlakjet.com/listing/17609316/E1189301AB6736FC81230DACA15BB72917609316.jpg" alt="Küçük Foto 3">
+                <img src="https://imaj.emlakjet.com/listing/17609316/52509F03F857E3729A3FE1585E888E6117609316.jpg" alt="Küçük Foto 4">
+            </div>
+            <div class="location">
+  <iframe 
+    src="https://www.google.com/maps?q=Ye%C5%9Filk%C3%B6y%20Mah.%20Baharistan%20Sok.%2013,%20Bak%C4%B1rk%C3%B6y,%20%C4%B0stanbul&output=embed" 
+    width="100%" 
+    height="300" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+        </div>
+
+        <!-- Detaylar -->
+        <div class="details">
+            <div class="price">72.000 TL</div>
+            <table>
+                <tr><td>İl</td><td>İstanbul</td></tr>
+                <tr><td>İlçe</td><td>Bakırköy</td></tr>
+                <tr><td>Mahalle</td><td>Yeşilköy Mahallesi</td></tr>
+                <tr><td>İlan No</td><td>17609316</td></tr>
+                <tr><td>İlan Tarihi</td><td>22 Haziran 2025</td></tr>
+                <tr><td>Emlak Tipi</td><td> Sıfır</td></tr>
+                <tr><td>m² (Brüt)</td><td>235</td></tr>
+                <tr><td>m² (Net)</td><td>195</td></tr>
+                <tr><td>Oda Sayısı</td><td>4+2</td></tr>
+                <tr><td>Bina Yaşı</td><td>0</td></tr>
+                <tr><td>Bulunduğu Kat</td><td>çatı(dubleks)</td></tr>
+                <tr><td>Kat Sayısı</td><td>4</td></tr>
+            </table>
+            <div class="desc">
+                <p>
+                    <strong>İlan Açıklaması:</strong><br>
+                    YEŞİLKÖY'DE SIFIR BUTİK SİTE'DE, ÇİFT GİRİŞLİ, 4+2, 235 M2, 4.KAT, LÜKS DUBLEKS DAİRE ...
+
+                    PROJEMİZ 2 BLOK, TOPLAM 20 DAİREDEN OLAN BUTİK BİR SİTEDİR ...
+
+                    SİTEDE OTURUM BAŞLAMIŞ OLUP, DAİRELERİMİZ KULLANIMA HAZIRDIR ...
+
+                    BİNA ÖZELLİKLERİ ...​ RADYE TEMEL VE PERDE BTONLU, ZEMİN ETÜDÜ YAPILMIŞ, YALITIM YÖNETMELİĞİNE UYGUN, DIŞ CEPHE KOMPOZİT VE MANTOLAMA, ISI VE SES YALITIMI, AÇIK YÜZME HAVUZU, KONE MARKA ASANSÖR, ORTAK UYDU SİSTEMİ, ÇELİK SU DEPOSU, HİDROFOR, JENERATÖR, KAPALI OTOPARK, ŞİFRELİ VE GÖRÜNTÜLÜ BİNA GİRİŞ VE 7/24 KAMERA KONTROL SİSTEMİ, APARTMAN GÖREVLİSİ, HER DAİREYE AİT DEPO ALANI ...
+
+                    İÇ ÖZELLİKLER ... DOĞALGAZ KOMBİ PETEKLER, SALONDA KLİMA, ODALARDA KLİMA ALT YAPISI, PENCERELER PVC ISICAM, TÜM PENCERELER DE ELEKTRİKLİ PANJUR, SPOT VE GİZLİ LED AYDINLATMA, SATEN BOYA KARTONPİYER, HİLTON BANYO, DUŞAKABİN, SALON ÇAMSAN MARKA LAMİNE PARKE, ODALAR ÇAMSAN MARKA LAMİNAT PARKE, ISLAK ZEMİNLER GRANİT, İÇ KAPILAR LAKE MOBİLYA KAPI, ANKASTRE MUTFAKLI, SİEMENS MARKA OCAK, FIRIN, DAVLUMVAZ, ANTREDE PORTMANTO VE VESTİYER ...
+
+                    ALT KAT ... İKİ ODA, SALON, MUTFAK, BANYO, WC, EBEVEYN BANYOSU, BALKON,
+
+                    ÜST KAT ... İKİ ODA, SALON, AMERİKAN MUTFAK, BANYO, WC VE ÇİFT TERAS ...
+
+                    KONUM BİLGİLERİ ... SAHİLE 300 METRE, MARMARAY VE ÇARŞIYA 5DK, OTOBÜS VE MİNİBÜS DURAKLARI 2 DK, EĞİTİM KURUMLARI 3-4 DK, SAĞLIK KURUMLARINA 6-7 DK, ALIŞVERİŞ MERKEZLERİNE 10 DK, BAKIRKÖY MEYDAN VE İDO'YA 10 DK. MESAFEDE ...
+
+                    SİTEDE ARA KAT SATILIK DAİRELERİMİZ MEVCUTTUR ...
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Mustakbel Evim. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>const bigPhoto = document.getElementById("bigPhoto");
+    const gallery = document.getElementById("gallery");
+
+    gallery.addEventListener("click", function(e) {
+      if (e.target.tagName === "IMG") {
+        const smallSrc = e.target.src;
+        const bigSrc = bigPhoto.src;
+
+        bigPhoto.src = smallSrc;
+        e.target.src = bigSrc;
+      }
+    });</script>
+
+</body>
+</html>
+

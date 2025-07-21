@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Koşuyolu Kiralık 2+1 Daire | Mustakbel Evim</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background: #6abf69;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .main-photo {
+            flex: 1 1 500px;
+        }
+
+            .main-photo img {
+                width: 100%;
+                border-radius: 5px;
+            }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+            .gallery img {
+                width: 100px;
+                height: 70px;
+                object-fit: cover;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
+
+                .gallery img:hover {
+                    transform: scale(1.05);
+                }
+
+        .location {
+            margin-top: 20px;
+        }
+
+            .location iframe {
+                width: 100%;
+                height: 300px;
+                border: 0;
+                border-radius: 8px;
+            }
+
+            .location p {
+                margin-top: 10px;
+                font-size: 16px;
+                color: #555;
+            }
+
+        .details {
+            flex: 1 1 300px;
+        }
+
+        .price {
+            color: #6abf69;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+            td:first-child {
+                background: #6abf69;
+                color: white;
+                font-weight: bold;
+                width: 40%;
+            }
+
+        .desc {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #e8f5e9;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <header>
+        <h1 onclick="location.href='index.html'">Müstakbel Evim</h1>
+    </header>
+
+    <div class="container">
+        <!-- Büyük Foto -->
+        <div class="main-photo">
+            <h2>BEYLİKDÜZÜ AĞCA'DAN BÖLGEDE EMSALSİZ FİYAT! SADECE 780.000 TL!!!</h2>
+            <img id="bigPhoto" src="anasayfa2.jpg" alt="Ana Foto">
+
+            <div class="gallery" id="gallery">
+                <img src="thmb_125555757842z.jpg" alt="Küçük Foto 1">
+                <img src="thmb_1255557578hmv.jpg" alt="Küçük Foto 2">
+                <img src="thmb_1255557578xen.jpg" alt="Küçük Foto 3">
+                <img src="thmb_1255557578xfd.jpg" alt="Küçük Foto 4">
+            </div>
+            <div class="location">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12064.073684816783!2d28.640899196583447!3d41.03262191548224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa3f08e0c95b9%3A0xaaaa!2sAdnan%20Kahveci%20Blv.%2C%20H%C3%BCrriyet%2C%2034522%20Esenyurt%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1689709364782!5m2!1str!2str"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <p>📍 Adnan Kahveci Blv., Hürriyet, 34522 Esenyurt/İstanbul</p>
+            </div>
+
+        </div>
+
+        <!-- Detaylar -->
+        <div class="details">
+            <div class="price"> 780.000 TL</div>
+            <table>
+                <tr><td>İl</td><td>İstanbul</td></tr>
+                <tr><td>İlçe</td><td> Esenyurt</td></tr>
+                <tr><td>Mahalle</td><td>Hürriyet Mahallesi</td></tr>
+                <tr><td>İlan No</td><td>17606229</td></tr>
+                <tr><td>İlan Tarihi</td><td>06 Temmuz 2025</td></tr>
+                <tr><td>Emlak Tipi</td><td> apartman</td></tr>
+                <tr><td>m² (Brüt)</td><td>90</td></tr>
+                <tr><td>m² (Net)</td><td>85</td></tr>
+                <tr><td>Oda Sayısı</td><td>1+1</td></tr>
+                <tr><td>Bina Yaşı</td><td>5-10</td></tr>
+                <tr><td>Kat Sayısı</td><td>5</td></tr>
+                <tr><td>Bulunduğu Kat</td><td>0</td></tr>
+                <tr><td>Isıtma</td><td>Merkezi Isıtma Kazanları</td></tr>
+                <tr><td>Banyo Sayısı</td><td>1</td></tr>
+                <tr><td>Kullanım Durumu</td><td>Boş</td></tr>
+                <tr><td>Tapu Durumu</td><td>Kooperatiften Tapu</td></tr>
+                <tr><td>Site İçerisinde</td><td>Hayır</td></tr>
+            </table>
+            <div class="desc">
+                <p>
+                    <strong>İlan Açıklaması:</strong><br>
+                    ÇOCUK ODASI VE YATAK ODASI Nİ   SH DEKORLU -
+
+                    - ÖZEL GİZlİ  AYDINLATMALI  ŞIK KORİDOR -
+
+                    - SON SİSTEM OTOMATİK MUTFAK DOLAPLARI -<br>
+
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Mustakbel Evim. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>const bigPhoto = document.getElementById("bigPhoto");
+        const gallery = document.getElementById("gallery");
+
+        gallery.addEventListener("click", function (e) {
+            if (e.target.tagName === "IMG") {
+                const smallSrc = e.target.src;
+                const bigSrc = bigPhoto.src;
+
+                bigPhoto.src = smallSrc;
+                e.target.src = bigSrc;
+            }
+        });</script>
+
+</body>
+</html>

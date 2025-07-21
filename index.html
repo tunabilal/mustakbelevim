@@ -1,0 +1,529 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Müstakbel Evim</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f8f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #6abf69;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav h2 {
+            display: inline-block;
+            margin: 0 15px;
+            cursor: pointer;
+            color: white;
+            font-size: 20px; /* Menüyü büyüt */
+        }
+
+            nav h2:hover {
+                text-decoration: underline;
+            }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: inline-block;
+            margin: 10px 5px 10px 0;
+        }
+
+      
+        button {
+            padding: 8px 15px;
+            background-color: #6abf69;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .ilanlar-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: white;
+            padding: 10px;
+            width: 300px;
+            box-sizing: border-box;
+        }
+
+            .card img {
+                width: 100%;
+                height: 200px; /* Sabit yükseklik belirle */
+                object-fit: cover; /* Oranı koruyarak taşan kısmı kırp */
+                border-radius: 5px;
+            }
+
+            .card h3 {
+                margin: 10px 0 5px 0;
+                font-size: 16px;
+            }
+
+            .card p {
+                margin: 0 0 10px 0;
+            }
+
+            .card a {
+                display: inline-block;
+                background-color: #6abf69;
+                color: white;
+                padding: 5px 10px;
+                border-radius: 4px;
+                text-decoration: none;
+            }
+
+        footer {
+            text-align: center;
+            padding: 35px;
+            background: #e8f5e9;
+            margin-top: 40px;
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+            .slide.active {
+                opacity: 1;
+            }
+
+        .slider-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1 onclick="location.href='index.html'">Müstakbel Evim</h1>
+        <nav>
+            <h2 onclick="location.href='index.html'">Anasayfa</h2>
+            <h2 onclick="location.href='hakkimizda.html'">Hakkımızda</h2>
+            <h2 onclick="location.href='iletisim.html'">İletişim</h2>
+        </nav>
+    </header>
+    <div class="slider">
+        <img src="https://evgezmesi.com/storage/assets/p/29503-hkkSLzvYCTOIGldc.jpg" class="slide active">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUHS6kCbcYjAxDXuw7srEjYLxj7xFl5PyHAQ&s" class="slide">
+        <img src="data:image/jpeg;base64,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" class="slide">
+        <div class="slider-text">MÜSTAKBEL EVİM</div>
+    </div>
+    <script>const slides = document.querySelectorAll('.slide');
+        let index = 0;
+        setInterval(() => {
+            slides[index].classList.remove('active');
+            index = (index + 1) % slides.length;
+            slides[index].classList.add('active');
+        }, 4000); // 2s bekle + 2s geçiş = toplam 4s</script>
+    <div class="slide-text">     
+    </div>
+    <section>
+        <h2>İlan Filtreleme</h2>
+
+        <label for="il">İl:</label>
+        <select id="il">
+            <option value="">İl Seçin</option>
+            <option value="İstanbul">İstanbul</option>
+            <option value="Ankara">Ankara</option>
+            <option value="İzmir">İzmir</option>
+            <option value="Bursa">Bursa</option>
+            <option value="Antalya">Antalya</option>
+            <option value="Adana">Adana</option>
+            <option value="Adıyaman">Adıyaman</option>
+            <option value="Afyonkarahisar">Afyonkarahisar</option>
+            <option value="Ağrı">Ağrı</option>
+            <option value="Aksaray">Aksaray</option>
+            <option value="Amasya">Amasya</option>
+            <option value="Ardahan">Ardahan</option>
+            <option value="Artvin">Artvin</option>
+            <option value="Aydın">Aydın</option>
+            <option value="Balıkesir">Balkesir</option>
+            <option value="Bartın">Bartın</option>
+            <option value="Batman">Batman</option>
+            <option value="Bayburt">Bayburt</option>
+            <option value="Bilecik">Bilecik</option>
+            <option value="Bingöl">Bingöl</option>
+            <option value="Bitlis">Bitlis</option>
+            <option value="Bolu">Bolu</option>
+            <option value="Burdur">Burdur</option>
+            <option value="Çanakkale">Çanakkale</option>
+            <option value="Çankırı">Çankırı</option>
+            <option value="Çorum">Çorum</option>
+            <option value="Denizli">Denizli</option>
+            <option value="Diyarbakır">Diyarbakır</option>
+            <option value="Düzce">Düzce</option>
+            <option value="Edirne">Edirne</option>
+            <option value="Elazığ">Elazığ</option>
+            <option value="Erzincan">Erzincan</option>
+            <option value="Erzurum">Erzurum</option>
+            <option value="Eskişehir">Eskişehir</option>
+            <option value="Gaziantep">Gaziantep</option>
+            <option value="Giresun">Giresun</option>
+            <option value="Gümüşhane">Gümüşhane</option>
+            <option value="Hakkâri">Hakkâri</option>
+            <option value="Hatay">Hatay</option>
+            <option value="Iğdır">Iğdır</option>
+            <option value="Isparta">Isparta</option>
+            <option value="Kahramanmaraş">Kahramanmaraş</option>
+            <option value="Karabük">Karabük</option>
+            <option value="Karaman">Karaman</option>
+            <option value="Kars">Kars</option>
+            <option value="Kastamonu">Kastamonu</option>
+            <option value="Kayseri">Kayseri</option>
+            <option value="Kırıkkale">Kırıkkale</option>
+            <option value="Kırklareli">Kırklareli</option>
+            <option value="Kırşehir">Kırşehir</option>
+            <option value="Kilis">Kilis</option>
+            <option value="Kocaeli">Kocaeli</option>
+            <option value="Konya">Konya</option>
+            <option value="Kütahya">Kütahya</option>
+            <option value="Malatya">Malatya</option>
+            <option value="Manisa">Manisa</option>
+            <option value="Mardin">Mardin</option>
+            <option value="Mersin">Mersin</option>
+            <option value="Muğla">Muğla</option>
+            <option value="Muş">Muş</option>
+            <option value="Nevşehir">Nevşehir</option>
+            <option value="Niğde">Niğde</option>
+            <option value="Ordu">Ordu</option>
+            <option value="Osmaniye">Osmaniye</option>
+            <option value="Rize">Rize</option>
+            <option value="Sakarya">Sakarya</option>
+            <option value="Samsun">Samsun</option>
+            <option value="Siirt">Siirt</option>
+            <option value="Sinop">Sinop</option>
+            <option value="Sivas">Sivas</option>
+            <option value="Şanlıurfa">Şanlıurfa</option>
+            <option value="Şırnak">Şırnak</option>
+            <option value="Tekirdağ">Tekirdağ</option>
+            <option value="Tokat">Tokat</option>
+            <option value="Trabzon">Trabzon</option>
+            <option value="Tunceli">Tunceli</option>
+            <option value="Uşak">Uşak</option>
+            <option value="Van">Van</option>
+            <option value="Yalova">Yalova</option>
+            <option value="Yozgat">Yozgat</option>
+            <option value="Zonguldak">Zonguldak</option>
+        </select>
+
+        <label for="ilce">İlçe:</label>
+        <select id="ilce">
+            <option value="">Önce İl Seçin</option>
+        </select>
+
+        <label for="durum">Durum:</label>
+        <select id="durum">
+            <option value="">Durum Seçin</option>
+            <option value="Satilik">Satılık</option>
+            <option value="Kiralik">Kiralık</option>
+        </select>
+
+        <button id="filtreleBtn">Filtrele</button>
+
+        <div class="ilanlar-container">
+            <div class="card">
+                <img src="anasayfailan1.jpg" alt="İlan 1">
+                <h3>MÜSTAKİL DENİZE 200 MT ULTRA GENİŞ YAZLIK VİLLA!</h3>
+                <p>4+1, 200m², Tekirdağ/Marmaraereğlisi - Satılık</p>
+                <a href="anasayfailan1.html">Detaylar</a>
+            </div>
+
+            <div class="card">
+                <img src="anasayfa2.jpg" alt="İlan 2">
+                <h3>BEYLİKDÜZÜ AĞCA'DAN EMSALSİZ FİYAT! SADECE 780.000 TL!</h3>
+                <p>1+1, 85m², İstanbul/Esenyurt - Satılık</p>
+                <a href="anasayfailan2.html">Detaylar</a>
+            </div>
+
+            <div class="card">
+                <img src="anasayfailan3.jpg" alt="İlan 3">
+                <h3>Tema İstanbul 2 Full Peyzaj Manzaralı Daire</h3>
+                <p>3+1, 150m², İstanbul/Küçükçekmece - Kiralık</p>
+                <a href="anasayfailan3.html">Detaylar</a>
+            </div>
+
+            <div class="card">
+                <img src="anasayfailan4.jpg" alt="İlan 4">
+                <h3>Şok Fiyat Bireysel Havuzlu Satılık Lüks Villa</h3>
+                <p>4+1, 220m², Aydın/Didim - Satılık</p>
+                <a href="anasayfailan4.html">Detaylar</a>
+            </div>
+
+            <div class="card">
+                <img src="anasayfailan5.jpg" alt="İlan 5">
+                <h3>Yılmaz Emlaktan Lüks Villa</h3>
+                <p>5+1, 235m², İstanbul/Silivri - Satılık</p>
+                <a href="anasayfailan5.html">Detaylar</a>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Müstakbel Evim. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>const ilSelect = document.getElementById("il");
+        const ilceSelect = document.getElementById("ilce");
+        const durumSelect = document.getElementById("durum");
+        const filtreleBtn = document.getElementById("filtreleBtn");
+
+        const ilce = {
+            İstanbul: ["Kadıköy", "Beşiktaş", "Üsküdar", "Bakırköy", "Şişli", "Adalar", "Arnavutköy", "Ataşehir", "Avcılar", "Bağcılar", "Bahçelievler", "Başakşehir",
+                "Bayrampaşa", "Beykoz", "Beylikdüzü", "Beyoğlu", "Büyükçekmece", "Çatalca", "Çekmeköy", "Esenler", "Esenyurt", "Eyüpsultan", "Fatih", "Gaziosmanpaşa", "Güngören",
+                "Kağıthane", "Kartal", "Küçükçekmece", "Maltepe", "Pendik", "Sancaktepe", "Sarıyer", "Şile", "Sultanbeyli", "Sultangazi", "Tuzla", "Üsküdar", "Zeytinburnu", "Silivri"],
+
+            Ankara: ["Çankaya", "Keçiören", "Mamak", "Etimesgut", "Yenimahalle", "Akyurt", "Altındağ", "Ayaş", "Bala", "Beypazarı", "Çamlıdere", "Çankaya", "Çubuk", "Elmadağ", "Evren",
+                "Gölbaşı", "Güdül", "Haymana", "Kahramankazan", "Kalecik", "Kızılcahamam", "Nallıhan", "Polatlı", "Pursaklar", "Sincan", "Şereflikoçhisar"],
+
+            İzmir: ["Konak", "Karşıyaka", "Bornova", "Buca", "Gaziemir", "Aliağa", "Balçova", "Bayındır", "Bayraklı", "Bergama", "Beydağ", "Çeşme", "Çiğli", "Dikili", "Foça", "Güzelbahçe",
+                "Karabağlar", "Karaburun", "Kemalpaşa", "Kınık", "Kiraz", "Konak", "Menderes", "Menemen", "Narlıdere", "Ödemiş", "Seferihisar", "Selçuk", "Tire", "Torbalı", "Urla"],
+
+            Bursa: ["Nilüfer", "Osmangazi", "Yıldırım", "Mudanya", "Gemlik", "Büyükorhan", "Gürsu", "Harmancık", "İnegöl", "İznik", "Karacabey", "Keles", "Kestel", "Mustafakemalpaşa",
+                "Orhaneli", "Orhangazi", "Yenişehir"],
+
+            Antalya: ["Muratpaşa", "Konyaaltı", "Kepez", "Alanya", "Manavgat", "Akseki", "Aksu", "Demre", "Döşemealtı", "Elmalı", "Finike", "Gazipaşa", "Gündoğmuş", "İbradı", "kaş", "Kemer",
+                "Korkuteli", "Kumluca", "Serik"],
+
+            Adana: ["Aladağ", "Ceyhan", "Çukurova(merkez ilçe)", "Feke", "İmamoğlu", "Karaisalı(merkez ilçe)", "Karataş", "Kozan", "Pozantı", "Saimbeyli", "Sarıçam(merkez ilçe)", "Seyhan(merkez ilçe)",
+                "Tufanbeyli", "Yumurtalık", "Yüreğir(merkez ilçe) "],
+
+            Adıyaman: ["Adıyaman Merkez", "Besni", "Çelikhan", "Gerger", "Gölbaşı", "Kahta", "Samsat", "Sincik", "Tut"],
+
+            Afyonkarahisar: ["Afyonkarahisar (Merkez)", "Başmakçı", "Bayat", "Bolvadin", "Çay", "Çobanlar", "Dazkırı", "Dinar", "Emirdağ", "Evciler", "Hocalar", "İhsaniye", "İscehisar", "Kızılören", "Sandıklı",
+                "Sinanpaşa", "Sultandağı", "Şuhut"],
+
+            Ağrı: ["Ağrı (Merkez)", "Diyadin", "Doğubayazıt", "Eleşkirt", "Hamur", "Patnos", "Taşlıçay", "Tutak"],
+
+            Aksaray: ["Aksaray (Merkez)", "Ağaçören", "Eskil", "Gülağaç", "Güzelyurt", "Ortaköy", "Sarıyahşi"],
+
+            Amasya: ["Amasya (Merkez)", "Göynücek", "Gümüşhacıköy", "Hamamözü", "Merzifon", "Suluova", "Taşova"],
+
+            Ardahan: ["Ardahan (Merkez)", "Çıldır", "Damal", "Göle", "Hanak", "Posof"],
+
+            Artvin: ["Artvin (Merkez)", "Ardanuç", "Arhavi", "Borçka", "Hopa", "Murgul", "Şavşat", "Yusufeli"],
+
+            Aydın: ["Aydın (Merkez)", "Bozdoğan", "Buharkent", "Çine", "Didim", "Germencik", "İncirliova", "Karacasu", "Karpuzlu", "Köşk", "Kuşadası", "Kuyucak", "Nazilli", "Söke", "Sultanhisar", "Yenipazar"],
+
+            Balıkesir: ["Balıkesir (Merkez)", "Altıeylül", "Ayvalık", "Balya", "Bandırma", "Bigadiç", "Burhaniye", "Dursunbey", "Edremit", "Erdek", "Gömeç", "Gönen", "Havran", "İvrindi", "Karesi", "Kepsut",
+                "Manyas", "Marmara", "Savaştepe", "Sındırgı", "Susurluk"],
+
+            Bartın: ["Bartın (Merkez)", "Amasra", "Kurucaşile", "Ulus"],
+
+            Batman: ["Batman (Merkez)", "Beşiri", "Gercüş", "Hasankeyf", "Kozluk", "Sason"],
+
+            Bayburt: ["Bayburt (Merkez)", "Aydıntepe", "Demirözü"],
+
+            Bilecik: ["Bilecik (Merkez)", "Bozüyük", "Gölpazarı", "İnhisar", "Osmaneli", "Pazaryeri", "Söğüt", "Yenipazar"],
+
+            Bingöl: ["Bingöl (Merkez)", "Adaklı", "Genç", "Karlıova", "Kiğı", "Solhan", "Yayladere", "Yedisu"],
+
+            Bitlis: ["Bitlis (Merkez)", "Adilcevaz", "Ahlat", "Güroymak", "Hizan", "Mutki", "Tatvan"],
+
+            Bolu: ["Bolu (Merkez)", "Dörtdivan", "Gerede", "Göynük", "Kıbrıscık", "Mengen", "Mudurnu", "Seben", "Yeniçağa"],
+
+            Burdur: ["Burdur (Merkez)", "Ağlasun", "Altınyayla", "Bucak", "Çavdır", "Çeltikçi", "Gölhisar", "Karamanlı", "Kemer", "Tefenni", "Yeşilova"],
+
+            Çanakkale: ["Çanakkale (Merkez)", "Ayvacık", "Bayramiç", "Biga", "Bozcaada", "Çan", "Eceabat", "Ezine", "Gelibolu", "Gökçeada", "Lapseki", "Yenice"],
+
+            Çankırı: ["Çankırı (Merkez)", "Atkaracalar", "Bayramören", "Çerkeş", "Eldivan", "Ilgaz", "Kızılırmak", "Korgun", "Kurşunlu", "Orta", "Şabanözü", "Yapraklı"],
+
+            Çorum: ["Çorum (Merkez)", "Alaca", "Bayat", "Boğazkale", "Dodurga", "İskilip", "Kargı", "Laçin", "Mecitözü", "Oğuzlar", "Ortaköy", "Osmancık", "Sungurlu", "Uğurludağ"],
+
+            Denizli: ["Denizli (Merkez)", "Acıpayam", "Babadağ", "Baklan", "Bekilli", "Beyağaç", "Bozkurt", "Buldan", "Çal", "Çameli", "Çardak", "Çivril", "Güney", "Honaz", "Kale", "Merkezefendi", "Pamukkale",
+                "Sarayköy", "Serinhisar", "Tavas"],
+
+            Diyarbakır: ["Diyarbakır (Merkez)", "Bağlar", "Bismil", "Çermik", "Çınar", "Çüngüş", "Dicle", "Eğil", "Ergani", "Hani", "Hazro", "Kayapınar", "Kocaköy", "Kulp", "Lice", "Silvan", "Sur", "Yenişehir"],
+
+            Düzce: ["Düzce (Merkez)", "Akçakoca", "Cumayeri", "Çilimli", "Gölyaka", "Gümüşova", "Kaynaşlı", "Yığılca"],
+
+            Edirne: ["Edirne (Merkez)", "Enez", "Havsa", "İpsala", "Keşan", "Lalapaşa", "Meriç", "Süloğlu", "Uzunköprü"],
+
+            Elazığ: ["Elazığ (Merkez)", "Ağın", "Alacakaya", "Arıcak", "Baskil", "Karakoçan", "Keban", "Kovancılar", "Maden", "Palu", "Sivrice"],
+
+            Erzincan: ["Erzincan (Merkez)", "Çayırlı", "İliç", "Kemah", "Kemaliye", "Otlukbeli", "Refahiye", "Tercan", "Üzümlü"],
+
+            Erzurum: ["Erzurum (Merkez)", "Aşkale", "Aziziye", "Çat", "Hınıs", "Horasan", "İspir", "Karaçoban", "Karayazı", "Köprüköy", "Narman", "Oltu", "Olur", "Palandöken", "Pasinler", "Pazaryolu", "Şenkaya",
+                "Tekman", "Tortum", "Uzundere", "Yakutiye"],
+
+            Eskişehir: ["Eskişehir (Merkez)", "Alpu", "Beylikova", "Çifteler", "Günyüzü", "Han", "İnönü", "Mahmudiye", "Mihalgazi", "Mihalıççık", "Odunpazarı", "Sarıcakaya", "Seyitgazi", "Sivrihisar", "Tepebaşı"],
+
+            Gaziantep: ["Gaziantep (Merkez)", "Araban", "Karkamış", "Nizip", "Nurdağı", "Oğuzeli", "Şahinbey", "Şehitkamil", "Yavuzeli"],
+
+            Giresun: ["Giresun (Merkez)", "Alucra", "Bulancak", "Çamoluk", "Çanakçı", "Dereli", "Doğankent", "Espiye", "Eynesil", "Görele", "Güce", "Keşap", "Piraziz", "Şebinkarahisar", "Tirebolu", "Yağlıdere"],
+
+            Gümüşhane: ["Gümüşhane (Merkez)", "Kelkit", "Köse", "Kürtün", "Şiran", "Torul"],
+
+            Hakkâri: ["Hakkâri (Merkez)", "Çukurca", "Derecik", "Şemdinli", "Yüksekova"],
+
+            Hatay: ["Hatay (Merkez)", "Altınözü", "Antakya", "Arsuz", "Belen", "Defne", "Dörtyol", "Erzin", "Hassa", "İskenderun", "Kırıkhan", "Kumlu", "Payas", "Reyhanlı", "Samandağ", "Yayladağı"],
+
+            Iğdır: ["Iğdır (Merkez)", "Aralık", "Karakoyunlu", "Tuzluca"],
+
+            Isparta: ["Isparta (Merkez)", "Aksu", "Atabey", "Eğirdir", "Gelendost", "Gönen", "Keçiborlu", "Senirkent", "Sütçüler", "Şarkikaraağaç", "Uluborlu", "Yalvaç", "Yenişarbademli"],
+
+            Kahramanmaraş: ["Kahramanmaraş (Merkez)", "Afşin", "Andırın", "Çağlayancerit", "Dulkadiroğlu", "Ekinözü", "Elbistan", "Göksun", "Nurhak", "Onikişubat", "Pazarcık", "Türkoğlu"],
+
+            Karabük: ["Karabük (Merkez)", "Eflani", "Eskipazar", "Ovacık", "Safranbolu", "Yenice"],
+
+            Karaman: ["Karaman (Merkez)", "Ayrancı", "Başyayla", "Ermenek", "Kazımkarabekir", "Sarıveliler"],
+
+            Kars: ["Kars (Merkez)", "Akyaka", "Arpaçay", "Digor", "Kağızman", "Sarıkamış", "Selim", "Susuz"],
+
+            Kastamonu: ["Kastamonu (Merkez)", "Abana", "Ağlı", "Araç", "Azdavay", "Bozkurt", "Cide", "Çatalzeytin", "Daday", "Devrekani", "Doğanyurt", "Hanönü", "İhsangazi", "İnebolu", "Küre", "Pınarbaşı", "Seydiler",
+                "Şenpazar", "Taşköprü", "Tosya"],
+
+            Kayseri: ["Kayseri (Merkez)", "Akkışla", "Bünyan", "Develi", "Felahiye", "Hacılar", "İncesu", "Kocasinan", "Melikgazi", "Özvatan", "Pınarbaşı", "Sarıoğlan", "Sarız", "Talas", "Tomarza", "Yahyalı", "Yeşilhisar"],
+
+            Kırıkkale: ["Kırıkkale (Merkez)", "Bahşili", "Balışeyh", "Çelebi", "Delice", "Karakeçili", "Keskin", "Sulakyurt", "Yahşihan"],
+
+            Kırşehir: ["Kırşehir (Merkez)", "Akçakent", "Akpınar", "Boztepe", "Çiçekdağı", "Kaman", "Mucur"],
+
+            Kilis: ["Kilis (Merkez)", "Elbeyli", "Musabeyli", "Polateli"],
+
+            Kocaeli: ["Kocaeli (Merkez)", "Başiskele", "Çayırova", "Darıca", "Derince", "Dilovası", "Gebze", "Gölcük", "İzmit", "Kandıra", "Karamürsel", "Kartepe", "Körfez"],
+
+            Kütahya: ["Kütahya (Merkez)", "Altıntaş", "Aslanapa", "Çavdarhisar", "Domaniç", "Dumlupınar", "Emet", "Gediz", "Hisarcık", "Pazarlar", "Simav", "Şaphane", "Tavşanlı"],
+
+            Malatya: ["Malatya (Merkez)", "Akçadağ", "Arapgir", "Arguvan", "Battalgazi", "Darende", "Doğanşehir", "Doğanyol", "Hekimhan", "Kale", "Kuluncak", "Pütürge", "Yazıhan", "Yeşilyurt"],
+
+            Manisa: ["Manisa (Merkez)", "Ahmetli", "Akhisar", "Alaşehir", "Demirci", "Gölmarmara", "Gördes", "Kırkağaç", "Köprübaşı", "Kula", "Salihli", "Sarıgöl", "Saruhanlı", "Selendi", "Soma", "Şehzadeler",
+                "Turgutlu", "Yunusemre"],
+
+            Mardin: ["Mardin (Merkez)", "Artuklu", "Dargeçit", "Derik", "Kızıltepe", "Mazıdağı", "Midyat", "Nusaybin", "Ömerli", "Savur", "Yeşilli"],
+
+            Mersin: ["Mersin (Merkez)", "Akdeniz", "Anamur", "Aydıncık", "Bozyazı", "Çamlıyayla", "Erdemli", "Gülnar", "Mezitli", "Mut", "Silifke", "Tarsus", "Toroslar", "Yenişehir"],
+
+            Muğla: ["Muğla (Merkez)", "Bodrum", "Dalaman", "Datça", "Fethiye", "Kavaklıdere", "Köyceğiz", "Marmaris", "Menteşe", "Milas", "Ortaca", "Seydikemer", "Ula", "Yatağan"],
+
+            Muş: ["Muş (Merkez)", "Bulanık", "Hasköy", "Korkut", "Malazgirt", "Varto"],
+
+            Nevşehir: ["Nevşehir (Merkez)", "Acıgöl", "Avanos", "Derinkuyu", "Gülşehir", "Hacıbektaş", "Kozaklı", "Ürgüp"],
+
+            Niğde: ["Niğde (Merkez)", "Altunhisar", "Bor", "Çamardı", "Çiftlik", "Ulukışla"],
+
+            Ordu: ["Ordu (Merkez)", "Akkuş", "Altınordu", "Aybastı", "Çamaş", "Çatalpınar", "Çaybaşı", "Fatsa", "Gölköy", "Gülyalı", "Gürgentepe", "İkizce", "Kabadüz", "Kabataş", "Korgan", "Kumru", "Mesudiye",
+                "Perşembe", "Ulubey", "Ünye"],
+
+            Osmaniye: ["Osmaniye (Merkez)", "Bahçe", "Düziçi", "Hasanbeyli", "Kadirli", "Sumbas", "Toprakkale"],
+
+            Rize: ["Rize (Merkez)", "Ardeşen", "Çamlıhemşin", "Çayeli", "Derepazarı", "Fındıklı", "Güneysu", "Hemşin", "İkizdere", "İyidere", "Kalkandere", "Pazar"],
+
+            Sakarya: ["Sakarya (Merkez)", "Adapazarı", "Akyazı", "Arifiye", "Erenler", "Ferizli", "Geyve", "Hendek", "Karapürçek", "Karasu", "Kaynarca", "Kocaali", "Pamukova", "Sapanca", "Serdivan", "Söğütlü", "Taraklı"],
+
+            Samsun: ["Samsun (Merkez)", "19 Mayıs", "Alaçam", "Asarcık", "Atakum", "Ayvacık", "Bafra", "Canik", "Çarşamba", "Havza", "İlkadım", "Kavak", "Ladik", "Salıpazarı", "Tekkeköy", "Terme", "Vezirköprü", "Yakakent"],
+
+            Siirt: ["Siirt (Merkez)", "Aydınlar (Tillo)", "Baykan", "Eruh", "Kurtalan", "Pervari", "Şirvan"],
+
+            Sinop: ["Sinop (Merkez)", "Ayancık", "Boyabat", "Dikmen", "Durağan", "Erfelek", "Gerze", "Saraydüzü", "Türkeli"],
+
+            Şanlıurfa: ["Şanlıurfa (Merkez)", "Akçakale", "Birecik", "Bozova", "Ceylanpınar", "Eyyübiye", "Halfeti", "Haliliye", "Harran", "Hilvan", "Karaköprü", "Siverek", "Suruç", "Viranşehir"],
+
+            Şırnak: ["Şırnak (Merkez)", "Beytüşşebap", "Cizre", "Güçlükonak", "İdil", "Silopi", "Uludere"],
+
+            Tekirdağ: ["Tekirdağ (Merkez)", "Çerkezköy", "Çorlu", "Ergene", "Hayrabolu", "Kapaklı", "Malkara", "Marmaraereğlisi", "Muratlı", "Saray", "Süleymanpaşa", "Şarköy"],
+
+            Tokat: ["Tokat (Merkez)", "Almus", "Artova", "Başçiftlik", "Erbaa", "Niksar", "Pazar", "Reşadiye", "Sulusaray", "Turhal", "Yeşilyurt", "Zile"],
+
+            Trabzon: ["Trabzon (Merkez)", "Akçaabat", "Araklı", "Arsin", "Beşikdüzü", "Çarşıbaşı", "Çaykara", "Dernekpazarı", "Düzköy", "Hayrat", "Köprübaşı", "Maçka", "Of", "Ortahisar", "Sürmene", "Şalpazarı",
+                "Tonya", "Vakfıkebir", "Yomra"],
+
+            Tunceli: ["Tunceli (Merkez)", "Çemişgezek", "Hozat", "Mazgirt", "Nazımiye", "Ovacık", "Pertek", "Pülümür"],
+
+            Uşak: ["Uşak (Merkez)", "Banaz", "Eşme", "Karahallı", "Sivaslı", "Ulubey"],
+
+            Van: ["Van (Merkez)", "Bahçesaray", "Başkale", "Çaldıran", "Çatak", "Edremit", "Erciş", "Gevaş", "Gürpınar", "İpekyolu", "Muradiye", "Özalp", "Saray", "Tuşba"],
+
+            Yalova: ["Yalova (Merkez)", "Altınova", "Armutlu", "Çınarcık", "Çiftlikköy", "Termal"],
+
+            Yozgat: ["Yozgat (Merkez)", "Akdağmadeni", "Aydıncık", "Boğazlıyan", "Çandır", "Çayıralan", "Çekerek", "Kadışehri", "Saraykent", "Sarıkaya", "Sorgun", "Şefaatli", "Yenifakılı", "Yerköy"],
+
+            Zonguldak: ["Zonguldak (Merkez)", "Alaplı", "Çaycuma", "Devrek", "Gökçebey", "Kilimli", "Kozlu", "Karadeniz Ereğli"],
+
+
+        };
+
+        ilSelect.addEventListener("change", function () {
+            const secilenIl = ilSelect.value;
+            ilceSelect.innerHTML = '<option value="">İlçe Seçin</option>';
+
+            if (secilenIl && ilce[secilenIl]) {
+                ilce[secilenIl].forEach(function (ilceAdi) {
+                    const option = document.createElement("option");
+                    option.value = ilceAdi;
+                    option.textContent = ilceAdi;
+                    ilceSelect.appendChild(option);
+                });
+            }
+        });
+
+        function toEnglish(str) {
+            return str
+                .toLowerCase()
+                .replace(/ş/g, "s")
+                .replace(/ç/g, "c")
+                .replace(/ö/g, "o")
+                .replace(/ü/g, "u")
+                .replace(/ı/g, "i")
+                .replace(/ğ/g, "g")
+                .replace(/İ/g, "i")
+                .replace(/ /g, "");
+        }
+
+        filtreleBtn.addEventListener("click", function () {
+            const il = ilSelect.value;
+            const ilceName = ilceSelect.value;
+            const durum = durumSelect.value;
+
+            if (il && ilceName && durum) {
+                const link = toEnglish(ilceName) + toEnglish(durum) + ".html";
+                window.location.href = link;
+            } else {
+                alert("Lütfen tüm seçimleri yapın!");
+            }
+        });</script>
+
+</body>
+</html>

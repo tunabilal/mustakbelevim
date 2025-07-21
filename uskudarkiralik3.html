@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Üsküdar 1+1 Çatı Katı | Mustakbel Evim</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f8f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #6abf69;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav h2 {
+            display: inline-block;
+            margin: 0 15px;
+            cursor: pointer;
+            color: white;
+            font-size: 20px;
+        }
+
+            nav h2:hover {
+                text-decoration: underline;
+            }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: inline-block;
+            margin: 10px 5px 10px 0;
+        }
+
+        select {
+            padding: 5px;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: #6abf69;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .ilanlar-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: white;
+            padding: 10px;
+            width: 300px;
+            box-sizing: border-box;
+        }
+
+            .card img {
+                width: 100%;
+                border-radius: 5px;
+            }
+
+            .card h3 {
+                margin: 10px 0 5px 0;
+                font-size: 16px;
+            }
+
+            .card p {
+                margin: 0 0 10px 0;
+            }
+
+            .card a {
+                display: inline-block;
+                background-color: #6abf69;
+                color: white;
+                padding: 5px 10px;
+                border-radius: 4px;
+                text-decoration: none;
+            }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .main-photo {
+            flex: 1 1 600px;
+            max-width: 600px;
+        }
+
+            .main-photo img {
+                width: 100%;
+                border-radius: 5px;
+            }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+            .gallery img {
+                width: 100px;
+                height: 70px;
+                object-fit: cover;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
+
+                .gallery img:hover {
+                    transform: scale(1.05);
+                }
+
+        .details {
+            flex: 1 1 300px;
+        }
+
+        .price {
+            color: #6abf69;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+            td:first-child {
+                background: #6abf69;
+                color: white;
+                font-weight: bold;
+                width: 40%;
+            }
+
+        .desc {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #e8f5e9;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 onclick="location.href='index.html'">Müstakbel Evim</h1>
+    </header>
+
+    <div class="container">
+        <!-- Büyük Foto -->
+        <div class="main-photo">
+            <h2>Üsküdar 1+1 Çatı Katı</h2>
+            <img id="bigPhoto" src="https://imaj.emlakjet.com/listing/17609316/EA04C655CB3A4392CCED30AEFFFECB8A17609316.jpg" alt="Ana Foto">
+
+            <div class="gallery" id="gallery">
+                <img src="https://imaj.emlakjet.com/listing/17647685/DAE10926B314CE694A141281E8806F6C17647685.jpg" alt="Küçük Foto 1">
+                <img src="https://imaj.emlakjet.com/listing/17647685/C5D8AC657F4ADCE7B74CE45DC1878B8A17647685.jpg" alt="Küçük Foto 2">
+                <img src="https://imaj.emlakjet.com/listing/17647685/B13A73604D5F6F4128536A0AE99BAC9617647685.jpg" alt="Küçük Foto 3">
+                <img src="https://imaj.emlakjet.com/listing/17647685/84329DBE472AB602AAA4DFF721AF11F917647685.jpg" alt="Küçük Foto 4">
+            </div>
+            <div class="location">
+                <iframe src="https://www.google.com/maps?q=Zümrüt%20Sokak%2045,%20Cumhuriyet%20Mahallesi,%20Üsküdar,%20İstanbul&output=embed"
+                        width="100%"
+                        height="300"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+        </div>
+
+        <!-- Detaylar -->
+        <div class="details">
+            <div class="price">15.500 TL </div>
+            <table>
+                <tr><td>İl</td><td>İstanbul</td></tr>
+                <tr><td>İlçe</td><td>Üsküdar</td></tr>
+                <tr><td>Mahalle</td><td>Cumhuriyet Mahallesi</td></tr>
+                <tr><td>İlan No</td><td>17594143</td></tr>
+                <tr><td>İlan Tarihi</td><td>07 Temmuz 2025</td></tr>
+                <tr><td>Emlak Tipi</td><td>Satılık Daire</td></tr>
+                <tr><td>m² (Brüt)</td><td> 50 m²</td></tr>
+                <tr><td>m² (Net)</td><td>45 m²</td></tr>
+                <tr><td>Oda Sayısı</td><td>1+1</td></tr>
+                <tr><td>Bina Yaşı</td><td>5-10</td></tr>
+                <tr><td>Bulunduğu Kat</td><td>4. Kat</td></tr>
+                <tr><td>Kat Sayısı</td><td>4</td></tr>
+            </table>
+            <div class="desc">
+                <p>
+                    <strong>İlan Açıklaması:</strong><br>
+                    EMAR AVM'YE YÜRÜYEREK 8 DK
+                    E5' YÜRÜYEREK 8 DK
+                    BULGURLU METROYA 10DK
+                    MARKETLERE 3 DK UZAKLIKTA
+                    ALIŞVERİŞ MERKEZLERİNE VE SAĞLIK OCAĞINA YAKIN
+
+                    OLDUKÇA MERKEZİ BİR KONUMA BULUNMAKTADIR.   </p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Mustakbel Evim. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>const bigPhoto = document.getElementById("bigPhoto");
+    const gallery = document.getElementById("gallery");
+
+    gallery.addEventListener("click", function(e) {
+      if (e.target.tagName === "IMG") {
+        const smallSrc = e.target.src;
+        const bigSrc = bigPhoto.src;
+
+        bigPhoto.src = smallSrc;
+        e.target.src = bigSrc;
+      }
+    });</script>
+
+</body>
+</html>

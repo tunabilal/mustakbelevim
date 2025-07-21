@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Cadde Üzeri Full Eşyalı 2+1 Daire | Müstakbel Evim</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f8f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #6abf69;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav h2 {
+            display: inline-block;
+            margin: 0 15px;
+            cursor: pointer;
+            color: white;
+            font-size: 20px;
+        }
+
+            nav h2:hover {
+                text-decoration: underline;
+            }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: inline-block;
+            margin: 10px 5px 10px 0;
+        }
+
+        select {
+            padding: 5px;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: #6abf69;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .ilanlar-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: white;
+            padding: 10px;
+            width: 300px;
+            box-sizing: border-box;
+        }
+
+            .card img {
+                width: 100%;
+                border-radius: 5px;
+            }
+
+            .card h3 {
+                margin: 10px 0 5px 0;
+                font-size: 16px;
+            }
+
+            .card p {
+                margin: 0 0 10px 0;
+            }
+
+            .card a {
+                display: inline-block;
+                background-color: #6abf69;
+                color: white;
+                padding: 5px 10px;
+                border-radius: 4px;
+                text-decoration: none;
+            }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .main-photo {
+            flex: 1 1 600px;
+            max-width: 600px;
+        }
+
+            .main-photo img {
+                width: 100%;
+                border-radius: 5px;
+            }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+            .gallery img {
+                width: 100px;
+                height: 70px;
+                object-fit: cover;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
+
+                .gallery img:hover {
+                    transform: scale(1.05);
+                }
+
+        .details {
+            flex: 1 1 300px;
+        }
+
+        .price {
+            color: #6abf69;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+            td:first-child {
+                background: #6abf69;
+                color: white;
+                font-weight: bold;
+                width: 40%;
+            }
+
+        .desc {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #e8f5e9;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 onclick="location.href='index.html'">Müstakbel Evim</h1>
+
+        <div class="container">
+            <!-- Büyük Foto -->
+            <div class="main-photo">
+                <h2>Cadde Üzeri Full Eşyalı 2+1 Daire</h2>
+                <img id="bigPhoto" src="https://imaj.emlakjet.com/listing/17637118/AC41BA69935C6556191A6D418F0FDB2F17637118.jpg" alt="Ana Foto">
+
+                <div class="gallery" id="gallery">
+                    <img src="https://imaj.emlakjet.com/listing/17637118/B801F186152102EBBEFF31EB5D54E30917637118.jpg" alt="Küçük Foto 1">
+                    <img src="https://imaj.emlakjet.com/listing/17637118/466731F0F95F78A69565AFBA12EBD46A17637118.jpg" alt="Küçük Foto 2">
+                    <img src="https://imaj.emlakjet.com/listing/17637118/49096157CAFE573FFEDFA892850C133B17637118.jpg" alt="Küçük Foto 3">
+                    <img src="https://imaj.emlakjet.com/listing/17637118/52DE8E916019E231638E0FC7DEE50E9117637118.jpg" alt="Küçük Foto 4">
+                </div>
+                <div class="location">
+                    <iframe src="https://www.google.com/maps?q=Tekin%20Sokak%207,%20Gülbahar%20Mahallesi,%20Şişli,%20İstanbul&output=embed"
+                            width="100%"
+                            height="300"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </div>
+
+            <!-- Detaylar -->
+            <div class="details">
+                <div class="price">19.500.000 TL</div>
+                <table>
+                    <tr><td>İl</td><td>İstanbul</td></tr>
+                    <tr><td>İlçe</td><td>Şişli</td></tr>
+                    <tr><td>Mahalle</td><td>Gülbahar Mahallesi</td></tr>
+                    <tr><td>İlan No</td><td>9473143</td></tr>
+                    <tr><td>İlan Tarihi</td><td>11 Temmuz 2025</td></tr>
+                    <tr><td>Emlak Tipi</td><td>Kiralık Daire</td></tr>
+                    <tr><td>m² (Brüt)</td><td>65 m²</td></tr>
+                    <tr><td>m² (Net)</td><td>60 m²</td></tr>
+                    <tr><td>Oda Sayısı</td><td>2+1</td></tr>
+                    <tr><td>Bina Yaşı</td><td>16-20</td></tr>
+                    <tr><td>Bulunduğu Kat</td><td>4. Kat</td></tr>
+                    <tr><td>Kat Sayısı</td><td>5</td></tr>
+                </table>
+                <div class="desc">
+                    <p>
+                        <strong>İlan Açıklaması:</strong><br>
+                        Paranın Merkezi Gayrimenkul İstanbul Şişli Gülbahar Mahallesi 2+1 Oda Kiralık Daire 28,500 TL #17637118
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Mustakbel Evim. Tüm hakları saklıdır.</p>
+        </footer>
+
+        <script>const bigPhoto = document.getElementById("bigPhoto");
+            const gallery = document.getElementById("gallery");
+
+            gallery.addEventListener("click", function (e) {
+                if (e.target.tagName === "IMG") {
+                    const smallSrc = e.target.src;
+                    const bigSrc = bigPhoto.src;
+
+                    bigPhoto.src = smallSrc;
+                    e.target.src = bigSrc;
+                }
+            });</script>
+
+</body>
+</html>

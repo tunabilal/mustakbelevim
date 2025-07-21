@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Kartaltepe Metro Metrobüse Yakın 3+1 Eşyalı Daire | Müstakbel Evim</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background: #6abf69;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .main-photo {
+            flex: 1 1 55%;
+        }
+
+            .main-photo img {
+                width: 100%;
+                border-radius: 5px;
+            }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+            .gallery img {
+                width: 100px;
+                height: 70px;
+                object-fit: cover;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
+
+                .gallery img:hover {
+                    transform: scale(1.05);
+                }
+
+        .details {
+            flex: 1 1 40%;
+        }
+
+        .price {
+            color: #6abf69;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+            td:first-child {
+                background: #6abf69;
+                color: white;
+                font-weight: bold;
+                width: 40%;
+            }
+
+        .desc {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        .location {
+            margin-top: 20px;
+        }
+
+            .location iframe {
+                width: 100%;
+                height: 300px;
+                border: 0;
+                border-radius: 8px;
+            }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #e8f5e9;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 onclick="location.href='index.html'">Müstakbel Evim</h1>
+    </header>
+
+    <div class="container">
+        <!-- Sol: Foto -->
+        <div class="main-photo">
+            <h2>Kartaltepe Metro Metrobüse Yakın 3+1 Eşyalı Daire</h2>
+            <img id="bigPhoto" src="https://imaj.emlakjet.com/listing/17611857/1DA104B6BBB6C100B8498D55F385D37F17611857.jpg" alt="Ana Foto">
+            <div class="gallery" id="gallery">
+                <img src="https://imaj.emlakjet.com/listing/17611857/CAC092741327DD2EF451561CBCBBEC9117611857.jpg" alt="Foto 2">
+                <img src="https://imaj.emlakjet.com/listing/17611857/AA493D7804666FA801F92FBE2D936DEA17611857.jpg" alt="Foto 3">
+                <img src="https://imaj.emlakjet.com/listing/17611857/A35F100884F678DB5A189349D263B8C517611857.jpg" alt="Foto 4">
+            </div>
+            <!-- Harita -->
+            <div class="location">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6012.22913848522!2d28.8136856!3d40.9683954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa3dbb9eb4b27%3A0xc5371c13aa19efb9!2sEk%C5%9Fi%20Nar%20Sk.%2022%2C%20%C5%9Eenlikk%C3%B6y%2C%20Bak%C4%B1rk%C3%B6y%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1720611123456"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Sağ: Detay -->
+        <div class="details">
+            <div class="price">60.000 TL</div>
+            <table>
+                <tr><td>İl</td><td>İstanbul</td></tr>
+                <tr><td>İlçe</td><td>Bakırköy</td></tr>
+                <tr><td>Mahalle</td><td>Kartaltepe Mahallesi</td></tr>
+                <tr><td>İlan No</td><td>17611857</td></tr>
+                <tr><td>İlan Tarihi</td><td>10 Temmuz 2025</td></tr>
+                <tr><td>Emlak Tipi</td><td>Kiralık Daire</td></tr>
+                <tr><td>m² (Net)</td><td>130</td></tr>
+                <tr><td>Oda Sayısı</td><td>3+1</td></tr>
+                <tr><td>Bina Yaşı</td><td>21 ve üzeri</td></tr>
+                <tr><td>Bulunduğu Kat</td><td>5. Kat</td></tr>
+            </table>
+            <div class="desc">
+                Detaylı bilgi için arayınız.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Müstakbel Evim. Tüm hakları saklıdır.
+    </footer>
+
+    <script>const bigPhoto = document.getElementById("bigPhoto");
+        const gallery = document.getElementById("gallery");
+        gallery.addEventListener("click", function (e) {
+            if (e.target.tagName === "IMG") {
+                const tempSrc = bigPhoto.src;
+                bigPhoto.src = e.target.src;
+                e.target.src = tempSrc;
+            }
+        });</script>
+
+</body>
+</html>
